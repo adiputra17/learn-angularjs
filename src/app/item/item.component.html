@@ -1,0 +1,62 @@
+<div class="row" style="margin: 20px 20px 20px 20px">
+    <!-- {{ items }} -->
+    <div class="col-md-3">
+        <div class = "panel panel-info">
+            <div class = "panel-heading">
+                <h3 class = "panel-title">{{leftTitle}}</h3>
+            </div>
+            <div class = "panel-body">
+                <ul>
+                    <li *ngFor="let menu of menus">
+                        <a href="#"> {{menu}} </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div class = "panel panel-info">
+            <div class = "panel-heading">
+                <h3 class = "panel-title">List Item</h3>
+            </div>
+            <div class = "panel-body">
+                <input type = "text" class = "form-control" ngModel = "yourItem" placeholder="Search item here">
+                <h3>You search is {{yourItem.value}} !</h3>
+                <br>
+                <div class="row">
+                    <div class="col-md-6" *ngFor="let item of items">
+                        <!-- {{items}} -->
+                        <table class="table">
+                            <tr>
+                                <td width="20%" rowspan="3"> 
+                                    <img src="{{item.gambar}}" height="90px" width="70px"> <br>
+                                    <a style="width: 100%; margin-top: 5px" href="#" class="btn btn-sm btn-info" role="button" >Detail</a>
+                                </td>
+                                <td width=""><b>Merk &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> {{item.nama}} </td>
+                            </tr>
+                            <tr>
+                                <td width=""><b>Harga &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> {{item.harga}} </td>
+                            </tr>
+                            <tr>
+                                <td width=""><b>Deskripsi :</b> {{item.deskripsi}} </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class = "panel panel-info">
+            <div class = "panel-heading">
+                <h3 class = "panel-title">{{rightTitle}}</h3>
+            </div>
+            <div class = "panel-body">
+                <div>
+                    <div *ngFor="let menu of menus"><span class="label label-info">{{menu}}</span></div>
+                    <!-- {{menus}} -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
