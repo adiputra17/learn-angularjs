@@ -1,0 +1,63 @@
+<div class="row" style="margin: 20px 20px 20px 20px">
+    <!-- {{ items }} -->
+    <div class="col-md-3">
+        <div class = "panel panel-info">
+            <div class = "panel-heading">
+                <h3 class = "panel-title">{{leftTitle}}</h3>
+            </div>
+            <div class = "panel-body">
+                <ul>
+                    <li *ngFor="let menu of menus">
+                        <a href="#"> {{menu}} </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div class = "panel panel-info">
+            <div class = "panel-heading">
+                <a routerLink="/dashboard">
+                    <span class="glyphicon glyphicon-chevron-left"></span> Back
+                </a>
+            </div>
+            <div class = "panel-body">
+                <!-- form -->
+                <div class="table-responsive">
+                  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                    <div class="form-group">
+                      <label for="name">Nama</label>
+                      <input type="text" class="form-control" id="nama" ngModel required #nama="ngModel" name="nama">
+                    </div>
+                    <div class="form-group">
+                      <label for="price">Harga</label>
+                      <input type="number" class="form-control" id="harga" ngModel required #harga="ngModel" name="harga">
+                    </div>
+                    <div class="form-group">
+                      <label for="stock">Link Gambar</label>
+                      <input type="text" class="form-control" id="gambar" ngModel required #gambar="ngModel" name="gambar">
+                    </div>
+                    <div class="form-group">
+                      <label for="description">Description</label>
+                      <textarea class="form-control" rows="5" id="deskripsi" ngModel required #deskripsi="ngModel" name="deskripsi"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class = "panel panel-info">
+            <div class = "panel-heading">
+                <h3 class = "panel-title">{{rightTitle}}</h3>
+            </div>
+            <div class = "panel-body">
+                <div>
+                    <div *ngFor="let menu of menus"><span class="label label-info">{{menu}}</span></div>
+                    <!-- {{menus}} -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
