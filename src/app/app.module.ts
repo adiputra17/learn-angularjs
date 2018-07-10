@@ -3,18 +3,25 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ItemComponent } from './item/item.component';
+import { AppRoutingModule, routingComponents } from './app.routing';
+// import { ItemComponent } from './item/item.component';
+// import { DetailItemComponent } from './detail-item/detail-item.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ItemComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        routingComponents,
+        // ItemComponent,
+        // DetailItemComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule
+    ],
+    providers: [],
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule { }

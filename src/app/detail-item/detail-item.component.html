@@ -17,20 +17,19 @@
     <div class="col-md-7">
         <div class = "panel panel-info">
             <div class = "panel-heading">
-                <h3 class = "panel-title">List Item</h3>
+                <a routerLink="/dashboard">
+                    <span class="glyphicon glyphicon-chevron-left"></span> Back
+                </a>
             </div>
             <div class = "panel-body">
-                <input type = "text" class = "form-control" ngModel = "yourItem" placeholder="Search item here">
-                <h3>You search is {{yourItem}} !</h3>
                 <br>
                 <div class="row">
-                    <div class="col-md-6" *ngFor="let item of items">
+                    <div class="col-md-12" *ngFor="let item of items">
                         <!-- {{items}} -->
                         <table class="table">
                             <tr>
                                 <td width="20%" rowspan="3"> 
-                                    <img src="{{item.gambar}}" height="90px" width="70px"> <br>
-                                    <a style="width: 100%; margin-top: 5px" routerLink="/detail-item/{{item.id}}" class="btn btn-sm btn-info" role="button" >Detail</a>
+                                    <img src="{{item.gambar}}" style="margin: auto" height="90px" width="70px"> <br>
                                 </td>
                                 <td width=""><b>Merk &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> {{item.nama}} </td>
                             </tr>
